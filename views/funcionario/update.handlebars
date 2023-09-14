@@ -1,0 +1,27 @@
+<h1>Editando o Funcionario {{funcionario.nome}}</h1>
+<form action="/update" method="POST">
+    <input type="hidden" name="id" value="{{funcionario.id}}">
+    <div class="form-control">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Nome do funcionário" value="{{funcionario.nome}}">
+
+    </div>
+    <div class="form-control">
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" placeholder="Último nome do funcionário" value="{{funcionario.sobrenome}}">
+    </div>
+    <div class="form-control">
+        <label for="salario">Salário:</label>
+        <input type="number" name="salario" placeholder="Salário do funcionário" value="{{funcionario.salario}}">
+    </div>
+    <div class="form-control">
+        <label for="comissao">Comissão por venda:</label>
+        <input type="number" name="comissao" placeholder="Porcentagem da comissão por vendas"
+            value="{{funcionario.comissao}}">
+    </div>
+    <div class="form-control">
+        <label for="qtd_vendas">Quantidade de vendas:</label>
+        <input type="number" name="qtd_vendas" placeholder="Quantidade de vendas" value="{{funcionario.qtd_vendas}}">
+    </div>
+    <input type="submit" value="Atualizar">
+</form>

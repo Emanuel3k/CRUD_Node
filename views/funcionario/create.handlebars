@@ -1,0 +1,25 @@
+<h1>Cadastre um novo Funcionario</h1>
+<form action="/create" method="POST">
+    <div class="form-control">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Nome do funcionário">
+    </div>
+    <div class="form-control">
+        <label for="sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" placeholder="Último nome do funcionário">
+    </div>
+    <div class="form-control">
+        <label for="salario">Salário:</label>
+        <input type="number" name="salario" placeholder="Salário do funcionário">
+    </div>
+    <div class="form-control">
+        <label for="comissao">Comissão por venda:</label>
+        <input type="number" name="comissao" placeholder="Porcentagem da comissão por vendas">
+    </div>
+    <div class="form-control">
+        <label for="qtd_vendas">Quantidade de vendas:</label>
+        <input type="number" name="qtd_vendas" placeholder="Quantidade de vendas">
+    </div>
+
+    <input type="submit" value="Cadastrar">
+</form>

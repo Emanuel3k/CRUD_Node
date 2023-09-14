@@ -1,0 +1,20 @@
+<h1>Todos os funcionarios:</h1>
+<ul class="funcionario-lista">
+    {{#if empty}}
+    <p>Não há funcionarios cadastrados no sistema</p>
+    {{/if}}
+    {{#each funcionarios}}
+    <li>
+        <span class="funcionario-nome">{{this.nome}} {{this.sobrenome}}</span>
+        <span class="funcionario-descricao">Salário: {{this.salario}}</span>
+        <span class="funcionario-descricao">Comissão: {{this.comissao}}</span>
+        <span class="funcionario-descricao">Quantidade de vendas: {{this.qtd_vendas}}</span>
+        <span class="actions">
+            <a href="/update/{{this.id}}"><i class="bi bi-pencil-square"></i></a>
+            <a href="/delete/{{this.id}}"><i class="bi bi-x-lg"></i></a>
+        </span>
+        <br>
+        {{total}}
+    </li>
+    {{/each}}
+</ul>
