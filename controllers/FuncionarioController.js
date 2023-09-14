@@ -35,9 +35,16 @@ module.exports = class FuncionarioController {
         await Funcionario.findAll({ raw: true })
             .then((funcionarios) => {
                 let empty = false;
+
                 if (funcionarios.length === 0) {
                     empty = true;
                 }
+
+                funcionarios = funcionarios.map((funcionario) => {
+                    funcionario.vendas = funcionario.qtd_vendas * (funcionario.comissao / 100);
+                    return funcionario;
+                })
+
                 res.render('funcionario/list', { funcionarios, empty });
 
             }).catch((err) => {
@@ -88,18 +95,5 @@ module.exports = class FuncionarioController {
             }).catch((err) => {
                 console.log(err);
             })
-    }
-
-    // Commission Calculation
-    static async commission(req, res) {
-        const id = req.params.id;
-        await Funcionario.findByPk(id)
-            .then((funcionario => {
-                const comissao = funcionario.comissao;
-                const vendas = funcionario.qtd_vendas;
-                const total = comissao * (vendas / 100);
-                res.render('funcionario/list', { funcionario, total: total });
-
-            }))
     }
 }

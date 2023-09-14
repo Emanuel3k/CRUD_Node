@@ -6,15 +6,14 @@
     {{#each funcionarios}}
     <li>
         <span class="funcionario-nome">{{this.nome}} {{this.sobrenome}}</span>
-        <span class="funcionario-descricao">Salário: {{this.salario}}</span>
-        <span class="funcionario-descricao">Comissão: {{this.comissao}}</span>
-        <span class="funcionario-descricao">Quantidade de vendas: {{this.qtd_vendas}}</span>
+        <span>Salário: {{this.salario}}</span>
+        <span>Comissão: {{this.comissao}}%</span>
+        <span>Quantidade de vendas: {{this.qtd_vendas}}</span>
+        <span>Comissao total: {{this.vendas}}</span>
         <span class="actions">
             <a href="/update/{{this.id}}"><i class="bi bi-pencil-square"></i></a>
             <a href="/delete/{{this.id}}"><i class="bi bi-x-lg"></i></a>
         </span>
-        <br>
-        {{total}}
     </li>
     {{/each}}
 </ul>
